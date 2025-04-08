@@ -135,7 +135,7 @@ class StringParser:
             str, character indicating the type of transaction
         """
         try:
-            # TODO: find out what E means
+            # P - Purchase, S - Sale, E - Exchange
             for action in ['P ', 'S ', 'E ']:
                 # Search for the characters indicating the transaction type in the string until one is found
                 found = cls._tran_str.find(action)
