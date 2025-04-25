@@ -12,3 +12,7 @@ class Cryptocurrency(Transaction):
 
     def __repr__(self):
         return f'{self.ex_date}~{self.asset_type}~{self.type}~{self.asset_name}~{self.nickname}~{self.minimum}~{self.maximum}'
+
+    def __str__(self):
+        return f'{"Bought" if self.type == "P" else "Sold" if self.type == "S" else self.type}: {self.asset_type} ' \
+               f'{self.asset_name if self.nickname is None else self.nickname} between {self.minimum}-{self.maximum}'
