@@ -129,7 +129,8 @@ class TransactionModel:
             execute(insert_str, transaction_params)
             self.conn.commit()
             # Connection close function is here because this is only called by the aggregator in its final step
-            self.conn.close()
+            # Update 4/25/2025: the database controller updated to include __exit__ function that will close connection
+            # self.conn.close()
         except Exception as e:
             print(f'Error occurred inserting transactions: {e}')
 
