@@ -61,6 +61,7 @@ if my_driver.download_latest_zip():
 
 if all_transactions:
     db.tran_model.insert_transaction_batch(all_transactions)
+    print(f'Inserted {len(all_transactions)} new transactions into the database.')
 
     """
     I'm going to keep this here because there may be times in the future when I want to write some of the transactions
